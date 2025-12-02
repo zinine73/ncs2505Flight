@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 753887095564659686}
   - component: {fileID: 2796436558709654993}
   - component: {fileID: 6828158016215323500}
+  - component: {fileID: 2661439611318903662}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -104,7 +105,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -169,3 +170,15 @@ PolygonCollider2D:
       - {x: 0.5, y: 0}
       - {x: 0.25, y: 0.43359375}
   m_UseDelaunayMesh: 0
+--- !u!114 &2661439611318903662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2734190778498528357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680d379ea3174e545ba7baab63e2fc77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
