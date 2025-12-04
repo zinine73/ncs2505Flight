@@ -200,6 +200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b95195006fcaec34690f574e1a261fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uIDocument: {fileID: 1579318719}
+  explosionEffect: {fileID: 1152286421690956386, guid: 8a173b2062a78584aa67145e14e83e21, type: 3}
   boosterFlame: {fileID: 160566200}
   thrustForce: 2
   maxSpeed: 5
