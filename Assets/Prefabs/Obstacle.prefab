@@ -183,8 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sePrefab: {fileID: 1152286421690956386, guid: a31c2e20bacd282428534f8e0ee3383c, type: 3}
-  minSpeed: 50
-  maxSpeed: 150
+  minSpeed: 100
+  maxSpeed: 300
   minSize: 0.5
   maxSize: 2
   maxSpinSpeed: 10

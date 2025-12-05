@@ -6,15 +6,18 @@ public class PlayerController : MonoBehaviour
     public UIMgr uiMgr;
     public GameObject explosionEffect;
     public GameObject boosterFlame;
+    public GameObject borders;
     public float thrustForce = 1f;
     public float maxSpeed = 5f;
-
+    public AudioClip boosterClip;
     
     Rigidbody2D rb;
+    AudioSource audioSource;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -52,16 +55,19 @@ public class PlayerController : MonoBehaviour
         {
             // 부스터 보이기
             boosterFlame.SetActive(true);
+            audioSource.PlayOneShot(boosterClip);
         }
         else if (Mouse.current.leftButton.wasReleasedThisFrame)
         {
             // 부스터 감추기
             boosterFlame.SetActive(false);
+            audioSource.Stop();
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        borders.SetActive(false);
         Destroy(gameObject);
         Instantiate(explosionEffect, 
             transform.position, transform.rotation);

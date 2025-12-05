@@ -9,6 +9,7 @@ public class Obstacle : MonoBehaviour
     public float maxSize = 2.0f;
     public float maxSpinSpeed = 10f;
     Rigidbody2D rb;
+    Collider2D c2d;
 
     void Start()
     {
@@ -24,10 +25,17 @@ public class Obstacle : MonoBehaviour
         
         float randomTorque = Random.Range(-maxSpinSpeed, maxSpinSpeed);
         rb.AddTorque(randomTorque);
+
+        c2d = GetComponent<Collider2D>();
+        c2d.sharedMaterial.bounciness = 1.0f;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        float by = c2d.sharedMaterial.bounciness;
+        if (by < 2.5f) by += 0.1f;
+        c2d.sharedMaterial.bounciness = by;
+        Debug.Log($"by:{by}");
         Vector2 cp = collision.GetContact(0).point;
         GameObject se = Instantiate(sePrefab, cp, Quaternion.identity);
         Destroy(se, 1f);

@@ -27,7 +27,7 @@ public class UIMgr : MonoBehaviour
         restartButton.clicked += ReloadScene;
     }
 
-void ReloadScene()
+    void ReloadScene()
     {
         SceneManager.LoadScene(
             SceneManager.GetActiveScene().name);
