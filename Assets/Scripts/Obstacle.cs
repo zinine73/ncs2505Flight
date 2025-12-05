@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    public GameObject sePrefab;
     public float minSpeed = 50f;
     public float maxSpeed = 150f;
     public float minSize = 0.5f;
@@ -25,8 +26,10 @@ public class Obstacle : MonoBehaviour
         rb.AddTorque(randomTorque);
     }
 
-    void Update()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-
+        Vector2 cp = collision.GetContact(0).point;
+        GameObject se = Instantiate(sePrefab, cp, Quaternion.identity);
+        Destroy(se, 1f);
     }
 }

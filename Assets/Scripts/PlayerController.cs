@@ -1,46 +1,26 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    public UIDocument uIDocument;
+    public UIMgr uiMgr;
     public GameObject explosionEffect;
     public GameObject boosterFlame;
     public float thrustForce = 1f;
     public float maxSpeed = 5f;
-    public float scoreMultiplier = 10f;
 
-    float score = 0f;
-    float elapsedTime = 0f;
+    
     Rigidbody2D rb;
-    Label scoreText;
-    Button restartButton;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        scoreText = uIDocument.rootVisualElement
-            .Q<Label>("ScoreLabel");
-        restartButton = uIDocument.rootVisualElement
-            .Q<Button>("RestartButton");
-        restartButton.style.display = DisplayStyle.None;
-        restartButton.clicked += ReloadScene;
     }
 
     void Update()
     {
-        UpdateScore();
         MovePlayer();
         SetBoosterView();
-    }
-
-    void UpdateScore()
-    {
-        elapsedTime += Time.deltaTime;
-        score = Mathf.FloorToInt(elapsedTime * scoreMultiplier);
-        scoreText.text = $" Score : {score} ";
     }
 
     void MovePlayer()
@@ -85,12 +65,6 @@ public class PlayerController : MonoBehaviour
         Destroy(gameObject);
         Instantiate(explosionEffect, 
             transform.position, transform.rotation);
-        restartButton.style.display = DisplayStyle.Flex;
-    }
-
-    void ReloadScene()
-    {
-        SceneManager.LoadScene(
-            SceneManager.GetActiveScene().name);
+        uiMgr.GameOver();
     }
 }

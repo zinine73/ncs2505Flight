@@ -200,12 +200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b95195006fcaec34690f574e1a261fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIDocument: {fileID: 1579318719}
+  uiMgr: {fileID: 1956422130}
   explosionEffect: {fileID: 1152286421690956386, guid: 8a173b2062a78584aa67145e14e83e21, type: 3}
   boosterFlame: {fileID: 160566200}
   thrustForce: 2
   maxSpeed: 5
-  scoreMultiplier: 10
 --- !u!1001 &112637776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1817,6 +1816,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2379738531993760146, guid: 9de03210061fc3b4082abf9796650d0e, type: 3}
   m_PrefabInstance: {fileID: 112637776}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1956422129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1956422131}
+  - component: {fileID: 1956422130}
+  m_Layer: 0
+  m_Name: UIMgr
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1956422130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956422129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a5743f9416fb6498c9d90b042faaee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIDocument: {fileID: 1579318719}
+  scoreMultiplier: 10
+--- !u!4 &1956422131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956422129}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2046751759 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2379738531993760146, guid: 9de03210061fc3b4082abf9796650d0e, type: 3}
@@ -1896,3 +1941,4 @@ SceneRoots:
   - {fileID: 1216572827}
   - {fileID: 61129312}
   - {fileID: 1579318720}
+  - {fileID: 1956422131}
